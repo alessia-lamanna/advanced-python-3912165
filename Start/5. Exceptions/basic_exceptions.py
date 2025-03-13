@@ -3,8 +3,19 @@
 
 # Try to execute some code that might cause an exception:
 
-num = input("Enter the first number: ")
-denom = input("Enter the second numnber: ")
-n = int(num)
-d = int(denom)
-print(n/d)
+try:
+  num = input("Enter the first number: ")
+  denom = input("Enter the second number: ")
+  n = int(num)
+  d = int(denom)
+  result = n/d
+except ZeroDivisionError as e:
+  print("You can't divide by zero!")
+  print(e)
+except ValueError as e:
+  print("You didn't give me a valid number!")
+  print(e)
+else:
+  print(result)
+finally:
+  print("Thanks for playing!")
